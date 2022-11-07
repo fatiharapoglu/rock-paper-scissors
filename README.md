@@ -1,3 +1,5 @@
 # Rock Paper Scissors 
 
-This is The Odin Project's Rock Paper Scissors project.
+[The Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)'s Rock Paper Scissors project.
+
+[Click for live preview](https://fatiharapoglu.github.io/rockPaperScissors/)
