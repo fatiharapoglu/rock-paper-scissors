@@ -1,80 +1,76 @@
 
-
+// Constants and settings
 
 const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
 const text = document.querySelector("#text");
+const playOneMore = document.querySelector(".box")
 const comp = document.querySelector("#comp");
 const human = document.querySelector("#human");
-
-
-
-
-let tie = "VAY ANASINI A TIE";
-let computerWins = "pc sikti";
-let playerWins = "aha anasını siktim onun";
+const buttons = document.querySelectorAll('button');
+const modalWin = document.getElementById("uWin");
+const modalLose = document.getElementById("uLose");
+const spanWin = document.querySelector("#closeWin");
+const spanLose = document.querySelector("#closeLose");
+const rockSFX = new Audio('./assets/rock.mp3');
+const paperSFX = new Audio('./assets/paper.mp3');
+const scissorsSFX = new Audio('./assets/scissors.mp3');
+let tie;
+let computerWins;
+let playerWins;
 let result;
 let playerScore = 0;
 let computerScore = 0;
+rockSFX.volume = 0.2;
+
+// Modal settings start
+
+function openModalWin() {
+    modalWin.style.display = "block";
+}
+
+spanWin.onclick = function() {
+    modalWin.style.display = "none";
+    const playAgain = document.createElement("p");
+    playAgain.innerHTML = `<a href="index.html" class="playAgain">Play Again?</a>` ;
+    playOneMore.appendChild(playAgain);
+}
+
+function openModalLose() {
+    modalLose.style.display = "block";
+}
+
+spanLose.onclick = function() {
+    modalLose.style.display = "none";
+    const playAgain = document.createElement("p");
+    playAgain.innerHTML = `<a href="index.html" class="playAgain">Play Again?</a>` ;
+    playOneMore.appendChild(playAgain);
+}
+
+// Modal settings end
+
+// Disabling buttons function 
+
+function disableButtons() {
+    buttons.forEach(elem => {
+        elem.disabled = true
+    })
+}
 
 
 
-
-
-
-
-    // for (let i=0 ; i<5 ; i++) {
-
-    //     let result = playRound() 
-
-    //     if (result == computerWins) {
-    //         computerScore = computerScore + 1;
-    //         console.log("Round:" , (i+1))
-    //         console.log("Computer score:", computerScore)
-    //         console.log("Player score:", playerScore)
-            
-
-    //     }
-
-    //     else if (result == playerWins) {
-    //         playerScore = playerScore + 1;
-    //         console.log("Round:" , (i+1))
-    //         console.log("Player score:", playerScore)
-    //         console.log("Computer score:", computerScore)
-
-
-    //     }
-
-
-    //     else if (result == tie) {
-    //         console.log ("this round: TIE")
-    //         i = i - 1
-    //     }
-
-
-    // }
-
-    // if (computerScore > playerScore) {
-    //     console.log("BİLGİSAYAR ANANI SİKTİ ANANI XDXDXDXD LOW KÖPEK ")
-
-
-    // }
-
-    // else {
-    //     console.log("HARD KAZANDIN TEBRİKLER")
-    // }
-
-
+// Buttonworks / rock
 
 
 btnRock.addEventListener('click', () => {
     
     playerChoice = "rock" ;
+    rockSFX.play();
     console.log(playerChoice) ;
     result = playRound();
     const pResult = document.createElement("p");
-    pResult.textContent = `${result} \n ` ;
+    pResult.innerHTML = `${result} \n ` ;
     text.appendChild(pResult);
 
     if (result == computerWins) {
@@ -85,20 +81,22 @@ btnRock.addEventListener('click', () => {
         playerScore = playerScore + 1;
     }
 
-    comp.textContent = `${computerScore}`
-    human.textContent = `${playerScore}`
+    comp.innerHTML = `${computerScore}`
+    human.innerHTML = `${playerScore}`
 
     if (computerScore == 5) {
         computerScore = 0;
         playerScore = 0;
-        alert("BİLGİSAYAR ANANI SİKTİ ANANI XDXDXDXD LOW KÖPEK");
+        openModalLose()
+        disableButtons()
     
     }
 
     else if (playerScore == 5 ) {
         computerScore = 0;
         playerScore = 0;
-        alert("HARD KAZANDIN TEBRİKLER");
+        openModalWin()
+        disableButtons()
     }
 
 
@@ -106,15 +104,16 @@ btnRock.addEventListener('click', () => {
 }
 );
 
-
+// Buttonworks / paper
 
 btnPaper.addEventListener('click', () => {
     
     playerChoice = "paper" ;
+    paperSFX.play();
     console.log(playerChoice) ;
     result = playRound()
     const pResult = document.createElement("p");
-    pResult.textContent = `${result} \n ` ;
+    pResult.innerHTML = `${result} \n ` ;
     text.appendChild(pResult);
 
     if (result == computerWins) {
@@ -126,34 +125,37 @@ btnPaper.addEventListener('click', () => {
     }
 
 
-    comp.textContent = `${computerScore}`
-    human.textContent = `${playerScore}`
+    comp.innerHTML = `${computerScore}`
+    human.innerHTML = `${playerScore}`
 
     if (computerScore == 5) {
         computerScore = 0;
         playerScore = 0;
-        alert("BİLGİSAYAR ANANI SİKTİ ANANI XDXDXDXD LOW KÖPEK");
+        openModalLose()
+        disableButtons()
     
     }
 
     else if (playerScore == 5 ) {
         computerScore = 0;
         playerScore = 0;
-        alert("HARD KAZANDIN TEBRİKLER");
+        openModalWin()
+        disableButtons()
     }
 
 });
 
-
+// Buttonworks / scissors
 
 
 btnScissors.addEventListener('click', () => {
     
     playerChoice = "scissors" ;
+    scissorsSFX.play();
     console.log(playerChoice) ;
     result = playRound()
     const pResult = document.createElement("p");
-    pResult.textContent = `${result} \n ` ;
+    pResult.innerHTML = `${result} \n ` ;
     text.appendChild(pResult);
 
     if (result == computerWins) {
@@ -164,32 +166,29 @@ btnScissors.addEventListener('click', () => {
         playerScore = playerScore + 1;
     }
 
-    comp.textContent = `${computerScore}`
-    human.textContent = `${playerScore}`
+    comp.innerHTML = `${computerScore}`
+    human.innerHTML = `${playerScore}`
 
     if (computerScore == 5) {
         computerScore = 0;
         playerScore = 0;
-        alert("BİLGİSAYAR ANANI SİKTİ ANANI XDXDXDXD LOW KÖPEK");
+        openModalLose()
+        disableButtons()
     
     }
 
     else if (playerScore == 5 ) {
         computerScore = 0;
         playerScore = 0;
-        alert("HARD KAZANDIN TEBRİKLER");
+        openModalWin()
+        disableButtons()
     }
 
 });
 
 
 
-
-
-
-
-
-
+// Computer choice function
 
 const options = ["rock", "paper", "scissors"];
 
@@ -202,42 +201,44 @@ function getComputerChoice() {
 
 
 
-
-
-
-
-
-
+// one round function
 
 function playRound() {
 
     getComputerChoice()
 
     if (computerPlays == playerChoice) {
+        tie = "IT'S A TIE!"
         return tie;
     }
 
     else if (computerPlays == "rock" && playerChoice == "scissors") {
+        computerWins = "Computer plays ROCK: <br>Rock beats scissors, you lost this round. "
         return computerWins;
     }
 
     else if (computerPlays == "scissors" && playerChoice == "rock") {
+        playerWins = "Computer plays SCISSORS: <br>Rock beats scissors, you win this round. "
         return playerWins;
     }
 
     else if (computerPlays == "paper" && playerChoice == "rock") {
+        computerWins = "Computer plays PAPER: <br>Paper beats rock, you lost this round."
         return computerWins;
     }  
 
     else if (computerPlays == "rock" && playerChoice == "paper") {
+        playerWins = "Computer plays ROCK: <br>Paper beats rock, you win this round."
         return playerWins;
     }
 
     else if (computerPlays == "scissors" && playerChoice == "paper") {
+        computerWins = "Computer plays SCISSORS: <br>Scissors beats paper, you lost this round."
         return computerWins;
     }
 
     else if (computerPlays == "paper" && playerChoice == "scissors") {
+        playerWins = "Computer plays PAPER: <br>Scissors beats paper, you win this round."
         return playerWins;
     }    
 
@@ -245,76 +246,3 @@ function playRound() {
 return
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let computerScore = 0
-// let playerScore = 0
-
-// function game() {
-
-//     for (let i=0 ; i<5 ; i++) {
-
-//         let result = playRound() 
-
-//         if (result == computerWins) {
-//             computerScore = computerScore + 1;
-//             console.log("Round:" , (i+1))
-//             console.log("Computer score:", computerScore)
-//             console.log("Player score:", playerScore)
-            
-
-//         }
-
-//         else if (result == playerWins) {
-//             playerScore = playerScore + 1;
-//             console.log("Round:" , (i+1))
-//             console.log("Player score:", playerScore)
-//             console.log("Computer score:", computerScore)
-
-
-//         }
-
-
-//         else if (result == tie) {
-//             console.log ("this round: TIE")
-//             i = i - 1
-//         }
-
-
-//     }
-
-//     if (computerScore > playerScore) {
-//         console.log("BİLGİSAYAR ANANI SİKTİ ANANI XDXDXDXD LOW KÖPEK ")
-
-
-//     }
-
-//     else {
-//         console.log("HARD KAZANDIN TEBRİKLER")
-//     }
-
-// }
-
-
-// game()

@@ -4,36 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R P S</title>
-    <link rel="stylesheet" href="style.css">
+    <title>taşKağıtMakas</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
+
 <body>
-    <div>
+    <!-- Header -->
+    <div class="margin-top header">
+        <p>You: <span id="human">0</span></p>
         <p>Computer: <span id="comp">0</span></p>
-        <p>Human: <span id="human">0</span></p>
     </div>
     <div>
-        <h1 class="center margin-top">Choose your destiny!</h1>
-
+        <h1 class="center margin-top">Choose your destiny</h1>
+        <h4 class="center">First to score 5 points, wins...</h4>
     </div>
+    <!-- Buttons -->
     <div class="center">
-        <button class="btn" id="rock"><span>Rock</span></button>
-        <button class="btn" id="paper"><span>Paper</span></button>
-        <button class="btn" id="scissors"><span>Scissors</span></button>
+        <button class="btn" id="rock"><span>🪨</span></button>
+        <button class="btn" id="paper"><span>📜</span></button>
+        <button class="btn" id="scissors"><span>✀</span></button>
     </div>
 
-    <div class="center">
-        <h4 class="margin-top"> Let the game begin: </h4>
+    <div class="box"> 
+        ROCK PAPER SCISSORS
+        <!-- append child content comes here -->
     </div>
 
-    <div id="text" >
-
+    <div id="text">
+        <!-- append child content comes here -->
     </div>
     
+    <!-- Footer -->
+    <footer>
+        <div>
+            <span> Fettan | <a href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors" id="odin">The Odin Project</a> </span>
+            <a href="https://github.com/fatiharapoglu"><img src="assets/GitHub-Mark-120px-plus.png" alt="github logo" style="width:30px; height:30px; padding-left: 10px; padding-right: 10px;"></a>
+        </div>
+    </footer>
+
+    <!-- The Modals -->
+    <div id="uWin" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="closeWin">&times;</span>
+      <p>CONGRATS! YOU WIN!</p> <br>
+      <a href="index.html">Play Again?</a>
+    </div>
+  
+    </div>
+
+    <div id="uLose" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" id="closeLose">&times;</span>
+      <p>OH NO! COMPUTER WINS :/ </p> <br>
+      <a href="index.html">Play Again?</a>
+    </div>
+  
+    </div>
+
 </body>
 </html>

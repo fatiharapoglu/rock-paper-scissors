@@ -1,0 +1,152 @@
+
+body {
+    background-color: rgb(36, 2, 2);
+    color: rgb(2, 0, 0);
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+.btn {
+    background-color: rgba(255, 253, 253, 0.61);
+    margin: 10px;
+    padding: 20px;
+    font-size: 100px;
+    border-radius: 12px;
+    border: 5px inset rgb(190, 166, 166) ;
+    transition-duration: 0.4s;
+    text-align: center;
+    width: 200px;
+    
+}
+
+.btn:hover {
+    background-color: #ac2500; 
+    color: rgb(255, 255, 255);
+
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.margin-top {
+    margin-top: 50px;
+}
+
+h1, h3, h4{
+    margin: 50px;
+    color: goldenrod;
+}
+
+p {
+    text-align: center;
+    font-size: smaller;
+}
+
+#text > p {
+    padding: 10px;
+    color: rgb(214, 202, 202);
+}
+
+
+.header {
+    background-color: rgba(218, 165, 32, 0.616);
+    height: 75px;
+    padding-top: 10px;
+}
+
+footer {
+    background-color: rgba(218, 165, 32, 0.801);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    
+}
+
+.box {
+    position:absolute;
+    height: 100px;
+    width: 100px;
+    color: goldenrod;
+    left:10px;
+    top: 17%;
+    font-size: xx-large;
+}
+
+footer>div {
+    display: flex;
+    align-items: center;
+    font-size: x-small;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    padding-top: auto; 
+    left: 0;
+    top: 30%;
+    width: 100%; 
+    height: 100%; 
+}
+
+.modal-content {
+    background-color: #f195eef2;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 40%;
+    font-size: xx-large;
+    text-align: center;
+    
+}
+  
+.close {
+    color: rgb(36, 2, 2);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-content>a {
+    color: rgba(190, 3, 3, 0.945);
+    text-decoration: none;
+    
+}
+
+.modal-content>a:hover {
+    background-color: #ac2500; 
+    color: rgb(255, 255, 255);
+    
+}
+
+a#odin {
+    color: #000;
+    text-decoration: none;
+
+}
+
+a#odin:hover {
+    background-color: #ac2500; 
+    color: rgb(255, 255, 255);
+}
+
+.playAgain {
+    text-decoration: none;
+    background-color: #ac2500; 
+    color: rgb(255, 255, 255);
+}
