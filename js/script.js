@@ -1,6 +1,4 @@
-
 // Constants and settings
-
 const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissors = document.querySelector("#scissors");
@@ -24,45 +22,41 @@ let playerScore = 0;
 let computerScore = 0;
 rockSFX.volume = 0.2;
 
-// Modal settings start
 
+// Modal settings start
 function openModalWin() {
     modalWin.style.display = "block";
-}
+};
 
 spanWin.onclick = function() {
     modalWin.style.display = "none";
     const playAgain = document.createElement("p");
     playAgain.innerHTML = `<a href="index.html" class="playAgain">Play Again?</a>` ;
     playOneMore.appendChild(playAgain);
-}
+};
 
 function openModalLose() {
     modalLose.style.display = "block";
-}
+};
 
 spanLose.onclick = function() {
     modalLose.style.display = "none";
     const playAgain = document.createElement("p");
     playAgain.innerHTML = `<a href="index.html" class="playAgain">Play Again?</a>` ;
     playOneMore.appendChild(playAgain);
-}
-
+};
 // Modal settings end
 
-// Disabling buttons function 
 
+// Disabling buttons function 
 function disableButtons() {
     buttons.forEach(elem => {
         elem.disabled = true
     })
-}
-
+};
 
 
 // Buttonworks / rock
-
-
 btnRock.addEventListener('click', () => {
     
     playerChoice = "rock" ;
@@ -98,14 +92,10 @@ btnRock.addEventListener('click', () => {
         openModalWin()
         disableButtons()
     }
+});
 
-
-
-}
-);
 
 // Buttonworks / paper
-
 btnPaper.addEventListener('click', () => {
     
     playerChoice = "paper" ;
@@ -145,9 +135,8 @@ btnPaper.addEventListener('click', () => {
 
 });
 
+
 // Buttonworks / scissors
-
-
 btnScissors.addEventListener('click', () => {
     
     playerChoice = "scissors" ;
@@ -183,26 +172,20 @@ btnScissors.addEventListener('click', () => {
         openModalWin()
         disableButtons()
     }
-
 });
 
 
-
 // Computer choice function
-
 const options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() { 
     let computerChoice = Math.floor(Math.random() * (options.length))
     computerPlays = options[computerChoice]
     return
-}
+};
 
 
-
-
-// one round function
-
+// One round function
 function playRound() {
 
     getComputerChoice()
@@ -242,7 +225,5 @@ function playRound() {
         return playerWins;
     }    
 
-
 return
-}
-
+};
