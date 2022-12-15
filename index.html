@@ -13,9 +13,7 @@
     <script src="https://kit.fontawesome.com/4b1acd5b1d.js" crossorigin="anonymous"></script>
     <script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <!-- Header -->
     <div class="margin-top header">
         <p>You: <span id="human">0</span></p>
         <p>Computer: <span id="comp">0</span></p>
@@ -24,52 +22,40 @@
         <h1 class="center margin-top">Choose your destiny</h1>
         <h4 class="center">First to score 5 points, wins...</h4>
     </div>
-    <!-- Buttons -->
     <div class="center">
         <button class="btn" id="rock"><span><i class="fa-solid fa-chess-rook"></i></span></button>
         <button class="btn" id="paper"><span><i class="fa-solid fa-toilet-paper"></i></span></button>
         <button class="btn" id="scissors"><span><i class="fa-solid fa-scissors"></i></span></button>
     </div>
-
-    <div class="box"> 
+    <div class="box">
         ROCK PAPER SCISSORS
         <!-- append child content comes here -->
     </div>
-
     <div id="text">
         <!-- append child content comes here -->
     </div>
-    
-    <!-- Footer -->
     <footer>
         <div>
-            <span><a href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors" id="odin">The Odin Project</a> | fatiharapoglu </span>
-            <a href="https://github.com/fatiharapoglu"><img src="assets/GitHub-Mark-120px-plus.png" alt="github logo" style="width:30px; height:30px; padding-left: 10px; padding-right: 10px;"></a>
+            <span><a href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors" id="odin">The Odin
+                    Project</a> | fatiharapoglu </span>
+            <a href="https://github.com/fatiharapoglu"><img src="assets/GitHub-Mark-120px-plus.png" alt="github-logo"
+                    style="width:30px; height:30px; padding-left: 10px; padding-right: 10px;"></a>
         </div>
     </footer>
-
     <!-- The Modals -->
     <div id="uWin" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close" id="closeWin">&times;</span>
-      <p>CONGRATS! YOU WIN!</p> <br>
-      <a href="index.html">Play Again?</a>
+        <div class="modal-content">
+            <span class="close" id="close-win">&times;</span>
+            <p>CONGRATS! YOU WIN!</p><br>
+            <a href="index.html">Play Again?</a>
+        </div>
     </div>
-  
-    </div>
-
     <div id="uLose" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close" id="closeLose">&times;</span>
-      <p>OH NO! COMPUTER WINS :/ </p> <br>
-      <a href="index.html">Play Again?</a>
+        <div class="modal-content">
+            <span class="close" id="close-lose">&times;</span>
+            <p>OH NO! COMPUTER WINS :/ </p> <br>
+            <a href="index.html">Play Again?</a>
+        </div>
     </div>
-  
-    </div>
-
 </body>
 </html>
