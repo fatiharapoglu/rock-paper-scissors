@@ -14,6 +14,7 @@ const spanLose = document.querySelector("#close-lose");
 const rockSFX = new Audio("./assets/rock.mp3");
 const paperSFX = new Audio("./assets/paper.mp3");
 const scissorsSFX = new Audio("./assets/scissors.mp3");
+
 let tie;
 let computerWins;
 let playerWins;
@@ -36,7 +37,7 @@ spanWin.onclick = function () {
 
 function openModalLose() {
     modalLose.style.display = "block";
-};
+}
 
 spanLose.onclick = function () {
     modalLose.style.display = "none";
@@ -50,7 +51,7 @@ function disableButtons() {
     buttons.forEach((item) => {
         item.disabled = true;
     });
-};
+}
 
 // Buttonworks / rock
 btnRock.addEventListener("click", () => {
@@ -151,28 +152,22 @@ function playRound() {
         tie = "IT'S A TIE!";
         return tie;
     } else if (computerPlays == "rock" && playerChoice == "scissors") {
-        computerWins =
-            "Computer plays ROCK: <br>Rock beats scissors, you lost this round. ";
+        computerWins = "Computer plays ROCK: <br>Rock beats scissors, you lost this round. ";
         return computerWins;
     } else if (computerPlays == "scissors" && playerChoice == "rock") {
-        playerWins =
-            "Computer plays SCISSORS: <br>Rock beats scissors, you win this round. ";
+        playerWins = "Computer plays SCISSORS: <br>Rock beats scissors, you win this round. ";
         return playerWins;
     } else if (computerPlays == "paper" && playerChoice == "rock") {
-        computerWins =
-            "Computer plays PAPER: <br>Paper beats rock, you lost this round.";
+        computerWins = "Computer plays PAPER: <br>Paper beats rock, you lost this round.";
         return computerWins;
     } else if (computerPlays == "rock" && playerChoice == "paper") {
-        playerWins =
-            "Computer plays ROCK: <br>Paper beats rock, you win this round.";
+        playerWins = "Computer plays ROCK: <br>Paper beats rock, you win this round.";
         return playerWins;
     } else if (computerPlays == "scissors" && playerChoice == "paper") {
-        computerWins =
-            "Computer plays SCISSORS: <br>Scissors beats paper, you lost this round.";
+        computerWins = "Computer plays SCISSORS: <br>Scissors beats paper, you lost this round.";
         return computerWins;
     } else if (computerPlays == "paper" && playerChoice == "scissors") {
-        playerWins =
-            "Computer plays PAPER: <br>Scissors beats paper, you win this round.";
+        playerWins = "Computer plays PAPER: <br>Scissors beats paper, you win this round.";
         return playerWins;
     }
 }

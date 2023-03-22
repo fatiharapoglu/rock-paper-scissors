@@ -1,61 +1,76 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fettan | taşKağıtMakas</title>
-    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/4b1acd5b1d.js" crossorigin="anonymous"></script>
-    <script src="js/script.js" defer></script>
-</head>
-<body>
-    <div class="margin-top header">
-        <p>You: <span id="human">0</span></p>
-        <p>Computer: <span id="comp">0</span></p>
-    </div>
-    <div>
-        <h1 class="center margin-top">Choose your destiny</h1>
-        <h4 class="center">First to score 5 points, wins...</h4>
-    </div>
-    <div class="center">
-        <button class="btn" id="rock"><span><i class="fa-solid fa-chess-rook"></i></span></button>
-        <button class="btn" id="paper"><span><i class="fa-solid fa-toilet-paper"></i></span></button>
-        <button class="btn" id="scissors"><span><i class="fa-solid fa-scissors"></i></span></button>
-    </div>
-    <div class="box">
-        ROCK PAPER SCISSORS
-        <!-- append child content comes here -->
-    </div>
-    <div id="text">
-        <!-- append child content comes here -->
-    </div>
-    <footer>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fettan | taşKağıtMakas</title>
+        <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://kit.fontawesome.com/4b1acd5b1d.js" crossorigin="anonymous"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <div class="margin-top header">
+            <p>You: <span id="human">0</span></p>
+            <p>Computer: <span id="comp">0</span></p>
+        </div>
         <div>
-            <span><a href="https://www.theodinproject.com/lessons/foundations-rock-paper-scissors" id="odin">The Odin
-                    Project</a> | fatiharapoglu </span>
-            <a href="https://github.com/fatiharapoglu"><img src="assets/GitHub-Mark-120px-plus.png" alt="github-logo"
-                    style="width:30px; height:30px; padding-left: 10px; padding-right: 10px;"></a>
+            <h1 class="center margin-top">Choose your weapon</h1>
+            <h4 class="center">First to score 5 points, wins...</h4>
         </div>
-    </footer>
-    <!-- The Modals -->
-    <div id="uWin" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-win">&times;</span>
-            <p>CONGRATS! YOU WIN!</p><br>
-            <a href="index.html">Play Again?</a>
+        <div class="center">
+            <button class="btn" id="rock">
+                <span><i class="fa-solid fa-chess-rook"></i></span>
+            </button>
+            <button class="btn" id="paper">
+                <span><i class="fa-solid fa-toilet-paper"></i></span>
+            </button>
+            <button class="btn" id="scissors">
+                <span><i class="fa-solid fa-scissors"></i></span>
+            </button>
         </div>
-    </div>
-    <div id="uLose" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-lose">&times;</span>
-            <p>OH NO! COMPUTER WINS :/ </p> <br>
-            <a href="index.html">Play Again?</a>
+        <div class="box">ROCK PAPER SCISSORS</div>
+
+        <div id="text">
+            <h3>Fight Log</h3>
+            <!-- append child content comes here -->
         </div>
-    </div>
-</body>
+        <footer>
+            <div>
+                <span
+                    ><a href="https://www.theodinproject.com/" id="odin">The Odin Project</a>
+                    | fatiharapoglu
+                </span>
+                <a href="https://github.com/fatiharapoglu"
+                    ><img
+                        src="assets/GitHub-Mark-120px-plus.png"
+                        alt="github-logo"
+                        style="width: 30px; height: 30px; padding-left: 10px; padding-right: 10px"
+                /></a>
+            </div>
+        </footer>
+        <div id="uWin" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-win">&times;</span>
+                <p>CONGRATS! YOU WIN!</p>
+                <br />
+                <a href="index.html">Play Again?</a>
+            </div>
+        </div>
+        <div id="uLose" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-lose">&times;</span>
+                <p>OH NO! COMPUTER WINS :/</p>
+                <br />
+                <a href="index.html">Play Again?</a>
+            </div>
+        </div>
+    </body>
 </html>
